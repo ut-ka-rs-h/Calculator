@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Connected to Github') {
                 steps {
-                        echo 'HTML'
+                        echo 'Connected to github'
 			
                 }
         }
