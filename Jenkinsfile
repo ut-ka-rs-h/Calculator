@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'node:14-alpine' }
+        docker { image 'utkarsh233/my-pvt-repo:latest'}
     }
     stages {
         stage('Test') {
