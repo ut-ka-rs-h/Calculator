@@ -4,11 +4,10 @@ pipeline {
 	    stage('Build') { // build and tag docker image
 		steps {
 		    	script {  
-				sh "docker -v"
+				sh "docker images"
 		    	}
 		}
 	    }
 
-	    
     }
 }
