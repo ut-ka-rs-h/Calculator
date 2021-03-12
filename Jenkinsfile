@@ -1,12 +1,33 @@
 pipeline {
-    agent {
-        sudo docker { image 'utkarsh233/my-pvt-repo:latest'}
-    }
+
+    agent none
+
     stages {
-        stage('Test') {
+
+        stage("Fix the permission issue") {
+
+            agent any
+
             steps {
-                sh 'node --version'
+                sh "sudo chown root:jenkins /run/docker.sock"
             }
+
         }
+
+        stage('Step 1') {
+
+            agent {
+                docker { image 'utkarsh233/my-pvt-repo:latest'}
+            }
+            stages {
+                stage('Test') {
+                    steps {
+                        sh 'node --version'
+                    }
+                }
+            }
+
+        }
+
     }
 }
