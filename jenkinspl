@@ -9,14 +9,6 @@ pipeline {
 		}
 	    }
 
-	    stage('Upload'){
-		steps {
-			script {  
-				docker.withRegistry('https://crepantherx.jfrog.io', 'jfrog') {
-					sh "sudo docker push crepantherx.jfrog.io/techmahindra-docker-dev-local/todo:v1.0.${env.BUILD_ID}"
-				}
-			}
-		}
-	    }
+	    
     }
 }
