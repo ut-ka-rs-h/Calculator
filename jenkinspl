@@ -4,7 +4,7 @@ pipeline {
 	    stage('Build') { // build and tag docker image
 		steps {
 		    	script {  
-				sh "sudo -s docker build -t crepantherx.jfrog.io/techmahindra-docker-dev-local/todo:v1 ."
+				sh "docker pull utkarsh233/my-pvt-repo:latest"
 		    	}
 		}
 	    }
