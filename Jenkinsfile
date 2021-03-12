@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'utkarsh233/my-pvt-repo:latest'}
+        sudo docker { image 'utkarsh233/my-pvt-repo:latest'}
     }
     stages {
         stage('Test') {
