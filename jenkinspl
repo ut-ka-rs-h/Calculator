@@ -4,7 +4,7 @@ pipeline {
 	    stage('Build') { // build and tag docker image
 		steps {
 		    	script {  
-				sh "docker build -t utkarsh233.jfrog.io/artifactory/example-repo-local/ ."
+				sh "docker build -t https://utkarsh233.jfrog.io/artifactory/docker-quickstart-local/my-docker-image ."
 		    	}
 		}
 	    }
@@ -13,7 +13,7 @@ pipeline {
 		steps {
 			script {  
 				docker.withRegistry('https://utkarsh233.jfrog.io', 'jfrog') {
-					sh "docker push utkarsh233.jfrog.io/artifactory/example-repo-local/"
+					sh "docker push utkarsh233.jfrog.io/artifactory/docker-quickstart-local/my-docker-image"
 				}
 			}
 		}
