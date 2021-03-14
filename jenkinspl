@@ -3,7 +3,7 @@ pipeline {
     stages {
 	    stage('Build') { // build and tag docker image
 		steps {
-		    	script {  
+		    	script { 
 				sh "docker build ."
 		    	}
 		}
